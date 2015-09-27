@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	<!-- Latest compiled and minified Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <script src="js/mainCtrl.js"></script>
+	<!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<div class="row" ng-controller="MainCtrl">
+		<div>
+			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:300ms">
+
+				<div class="card small blue z-depth-4">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="images/Dylan.jpg">
+					</div>
+					<div class="card-content">
+						<div class="activator card-title truncate">Contact</div>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Contact Information<i class="material-icons right">close</i></span>
+						<p>Phone Number: 352-246-2350</p><br/>
+						<p>Email: DylanRichardson47@gmail.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:600ms">
+
+				<div class="card red lighten-1">
+					<div class="card-content center-align">
+						<div class="card-title truncate">Resume</div>
+						<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:900ms">
+				<a href="http://github.com/goozie001">
+					<div class="card green lighten-1" href="http://github.com/goozie001">
+						<div class="card-content center-align">
+							<div class="card-title truncate">Github</div>
+							<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:1200ms">
+
+				<div class="card grey lighten-1">
+					<div class="card-content center-align">
+						<div class="card-title truncate">LinkedIn</div>
+						<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
