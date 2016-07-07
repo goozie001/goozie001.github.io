@@ -1,71 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 	<!--Import Google Icon Font-->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-	<!-- Latest compiled and minified Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+	<link rel="stylesheet" href="css/main.css">
 	<!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	<!-- Latest compiled and minified Bootstrap JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
     <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
     <script src="js/mainCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
 	<!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<div class="row" ng-controller="MainCtrl">
-		<div>
-			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:300ms">
-
-				<div class="card small blue z-depth-4">
-					<div class="card-image waves-effect waves-block waves-light">
-						<img class="activator" src="images/Dylan.jpg">
-					</div>
-					<div class="card-content">
-						<div class="activator card-title truncate">Contact</div>
-					</div>
-					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Contact Information<i class="material-icons right">close</i></span>
-						<p>Phone Number: 352-246-2350</p><br/>
-						<p>Email: DylanRichardson47@gmail.com</p>
-					</div>
-				</div>
+	<div class="row fill" ng-controller="MainCtrl">
+		<div id="left" class="col l3 m5 s12 z-depth-1 fill white">
+			<div class="animated fadeInDown" style="-webkit-animation-duration:300ms">
+				<br/>
+				<img class="circle center" src="images/Dylan.jpg">
+				<br/>
+				<h5>Dylan Richardson</h5>
+				<br/>
+				<p>Phone Number</p>
+				<p><font color="#26a69a">352-246-2350</font></p>
+				<p>Email</p>
+				<p><font color="#26a69a">DylanRichardson47@gmail.com</font></p>
+				<br/>
 			</div>
-			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:600ms">
-
-				<div class="card red lighten-1">
-					<div class="card-content center-align">
-						<div class="card-title truncate">Resume</div>
-						<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
-					</div>
-				</div>
+			<div id="list">
+				<ul class="collection animated fadeInLeft" style="-webkit-animation-duration:600ms">
+					<a href="#aboutModal" class="collection-item modal-trigger" ng-class="{ 'active': activeId == 0 }" ng-click="activate(0)">About<i class="material-icons left small">info_outline</i></a>
+					<a href="https://www.dropbox.com/s/xi2d7itp6h4lk6o/Resume.pdf?dl=0" class="collection-item modal-trigger" ng-class="{ 'active': activeId == 1 }" ng-click="activate(1)"><i class="material-icons left small">stars</i>Resume</a>
+					<a href="https://www.linkedin.com/pub/dylan-richardson/98/817/806" class="collection-item" ng-class="{ 'active': activeId == 2 }" ng-click="activate(2)"><i class="material-icons left small">work</i>LinkedIn</a>
+					<a href="https://www.github.com/goozie001" class="collection-item" ng-class="{ 'active': activeId == 3 }" ng-click="activate(3)"><i class="material-icons left small">code</i>Github</a>
+				</ul>
 			</div>
-			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:900ms">
-				<a href="http://github.com/goozie001">
-					<div class="card green lighten-1" href="http://github.com/goozie001">
-						<div class="card-content center-align">
-							<div class="card-title truncate">Github</div>
-							<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-3 animated fadeInDown" style="-webkit-animation-duration:1200ms">
-
-				<div class="card grey lighten-1">
-					<div class="card-content center-align">
-						<div class="card-title truncate">LinkedIn</div>
-						<img class="circle" src="images/Dylan.jpg" width="50%" height="50%">
-					</div>
-				</div>
-			</div>
+		</div>
+	</div>
+	<div id="aboutModal" class="modal">
+		<div class="modal-content">
+			<h4>About Me</h4>
+			<p>I'm currently pursuing my graduate degree in Computer Science at University of Florida.</p>
+			<p>My first development job was as a mobile applications developer for Verigo, a startup in Gainesville, starting November of 2013. I collaborated with two developers to design and implement an iOS application that used the Bluetooth Low Energy protocol to exchange shipment and status information with our hardware chips, or 'pods', which tracked the temperature and time of their surroundings. The data collected from these chips was visualized into graphs and alerts on the application, as well as sent to our server to be viewed by remote users. After getting this application to a manageable state, I teamed with another developer to design and create the Android equivalent.</p>
+			<p>During the summer of 2015, I worked as a platform-level ASP.NET web application developer for Ultimate Software. One of the number of things accomplished during this period was working with a SQL developer to reduce the amount of time it took a certain web component to load by 100%. While he improved the stored procedure used to retrieve the data, I reduced the amount of dynamic SQL calls and connections, and also the amount of calls to cached data to achieve this.</p>
+			<p>For the summer of 2016, I am working on the SHIELD Android TV team at NVIDIA. I am making internal automation tools to expedite development and enhance reliability of the SHIELD product. Additionally, I am teaming with developers to identify bugs and integrate patches for upcoming Android TV releases. This includes contributing to regular code reviews on Gerrit and collaborating with SQAs to improve software quality.</p>
+			<p>While I have experience in a number of languages and frameworks, I am always eager to learn something new, as design patterns spread across all languages; I'm open to the idea of almost any software development opportunity. That being said, I currently feel comfortable with Python, Java, C++, Objective-C, Android, MySQL, AngularJS, and C#.</p>
 		</div>
 	</div>
 </body>
